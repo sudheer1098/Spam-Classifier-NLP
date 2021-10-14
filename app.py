@@ -68,12 +68,12 @@ def main():
             if y==0:
                 st.subheader("NOT A SPAM MESSAGE")
                 with conn:
-                    cursor.execute("INSERT INTO messages_inbox(ham)VALUES(?)",(msg+'\n\t\t\t####'+str(datetime.today().strftime("%I:%M %p")),))
+                    cursor.execute("INSERT INTO messages_inbox(ham)VALUES(?)",(msg+'    '+str(datetime.today().strftime("%I:%M %p")),))
                 
             else:
                 st.subheader("SPAM MESSAGE")
                 with conn:
-                    cursor.execute("INSERT INTO messages_inbox(spam)VALUES(?)",(msg+'\n\t\t\t####'+str(datetime.today().strftime("%I:%M %p")),))
+                    cursor.execute("INSERT INTO messages_inbox(spam)VALUES(?)",(msg+'    '+str(datetime.today().strftime("%I:%M %p")),))
 
     else:
         st.subheader("INBOX")
