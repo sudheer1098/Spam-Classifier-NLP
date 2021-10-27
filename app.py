@@ -55,6 +55,13 @@ def text_normalize(text):
 pipe1 = data['model1']
 pipe2 = data['model2']
 
+hide_menu_style = """
+                    <style>
+                    #MainMenu {visibility: hidden; }
+                    footer {visibility: hidden;}
+                    </style>
+                  """
+st.markdown(hide_menu_style, unsafe_allow_html = True)
 
 def main():
 
@@ -80,12 +87,14 @@ def main():
                 st.header("RESULT")
                 print(y)
                 if y==0:
-                    st.subheader("NOT A SPAM MESSAGE")
+                    result = '<p style="font-family:Verdana; color:green; font-size: 30px;"><b>NOT A SPAM MESSAGE</b></p>'
+                    st.markdown(result, unsafe_allow_html=True)
                     with conn:
                         cursor.execute("INSERT INTO messages_inbox(ham)VALUES(?)",(msg+"   -"+str(datetime.today().strftime("%I:%M %p")),))
                         
                 else:
-                    st.subheader("SPAM MESSAGE")
+                    result = '<p style="font-family:Verdana; color:red; font-size: 30px;"><b>SPAM MESSAGE</b></p>'
+                    st.markdown(result, unsafe_allow_html=True)
                     with conn:
                         cursor.execute("INSERT INTO messages_inbox(spam)VALUES(?)",(msg+"   -"+str(datetime.today().strftime("%I:%M %p")),))
 
