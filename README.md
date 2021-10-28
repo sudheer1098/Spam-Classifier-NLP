@@ -1,6 +1,6 @@
 # Spam_classifier_NLP
 Spam classification using Natural Language Processing.
-## Steps invovled
+## Approach and steps involved for model development
 
 - Import the modules, dependencies and load the dataset.
 - Analyse the dataset, get shape,info and check for null values and balance of the dataset.
@@ -18,3 +18,29 @@ Spam classification using Natural Language Processing.
 ## Conclusion
 
 Normalized text in a good way to minimize the Bag of words vector and improved the importance (tfidf score) of each word in corpus. Developed good models for SPAM Classification using Natural Language Processing with accuracy around 97.0
+
+## Steps for running the Web App
+
+- Cloning the Repository:
+
+      git clone https://github.com/sudheer1098/Spam-Classifier-NLP.git
+
+- Entering the project directory:
+
+      cd Spam-Classifier-NLP
+
+- Setting up the Python Environment with the dependencies:
+
+      pip install -r requirements.txt
+
+- Running the Web App:
+
+      streamlit run app.py
+
+- Stopping the Web App from the terminal:
+
+      Ctrl+C
+
+# Demonstration
+
+![](Media/demo-video.gif)
