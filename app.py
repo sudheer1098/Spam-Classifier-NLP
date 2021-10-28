@@ -108,7 +108,7 @@ def main():
             with conn:
                 cursor.execute("SELECT * FROM messages_inbox WHERE ham is not NULL")
             msgs = cursor.fetchall()
-            for k in range(len(msgs)-1, 0, -1):
+            for k in range(len(msgs)-1, -1, -1):
                 st.markdown(f'''{msgs[k][0]}''')
 
         col2.success("Spam")
@@ -116,7 +116,7 @@ def main():
             with conn:
                 cursor.execute("SELECT * FROM messages_inbox WHERE spam is not NULL")
             msgs = cursor.fetchall()
-            for k in range(len(msgs)-1, 0, -1):
+            for k in range(len(msgs)-1, -1, -1):
                 st.markdown(f'''{msgs[k][1]}''')
 
 main()
